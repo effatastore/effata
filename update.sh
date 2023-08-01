@@ -16,7 +16,7 @@ echo -e "    •> Install UDP Server <•" | lolcat
 echo -e "      •> Fix Bug Script <•" | lolcat
 echo -e "     •> Script By @Kytxz <•" | lolcat
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "  ${BG} >>> THANKS TO RIDWAN STORE <<< ${NC}" 
+echo -e "  ${BG} >>> THANKS TO EFFATA STORE <<< ${NC}" 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 sleep 3
 echo -e " [INFO] Downloading Update File" | lolcat
