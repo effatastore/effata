@@ -43,7 +43,7 @@ ${RED}Make sure the internet is smooth when installing the script${FONT}
 }
 EffataTunneling() {
 MYIP=$(curl -sS ipv4.icanhazip.com)
-    IZIN=$(curl -sS https://raw.githubusercontent.com/effatastore/ijinsceffata/ipsc/ip | awk '{print $4}' | grep $MYIP)
+    IZIN=$(curl -sS https://raw.githubusercontent.com/effatastore/ijin/ipsc/ip | awk '{print $4}' | grep $MYIP)
     if [ "$MYIP" = "$IZIN" ]; then
         TIMEDATE
     else
@@ -52,7 +52,7 @@ MYIP=$(curl -sS ipv4.icanhazip.com)
     EFFATAPROJECT
 }
 EFFATAPROJECT() {
-    curl -sS https://raw.githubusercontent.com/effatastore/ijinsceffata/ipsc/ip >/root/tmp
+    curl -sS https://raw.githubusercontent.com/effatastore/ijin/ipsc/ip >/root/tmp
     data=($(cat /root/tmp | grep -E "^### " | awk '{print $2}'))
     for user in "${data[@]}"; do
         exp=($(grep -E "^### $user" "/root/tmp" | awk '{print $3}'))
@@ -557,8 +557,8 @@ function install_all() {
 }
 
 function finish(){
-    USRSC=$(curl -sS https://raw.githubusercontent.com/effatastore/ijinsceffata/ipsc/ip | grep $MYIP | awk '{print $2}')
-    EXPSC=$(curl -sS https://raw.githubusercontent.com/effatastore/ijinsceffata/ipsc/ip | grep $MYIP | awk '{print $3}')
+    USRSC=$(curl -sS https://raw.githubusercontent.com/effatastore/ijin/ipsc/ip | grep $MYIP | awk '{print $2}')
+    EXPSC=$(curl -sS https://raw.githubusercontent.com/effatastore/ijin/ipsc/ip | grep $MYIP | awk '{print $3}')
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>────────────────────</code>
@@ -572,7 +572,7 @@ function finish(){
 <code>Exp Sc : </code><code>$EXPSC</code>
 <code>────────────────────</code>
 <i>Automatic Notification from</i>
-<i>Github KytTunnel</i> 
+<i>Github EffataTunnel</i> 
 "'&reply_markup={"inline_keyboard":[[{"text":"ᴏʀᴅᴇʀ🐳","url":"https://t.me/CRSe7en2nd"},{"text":"ɪɴꜱᴛᴀʟʟ🐬","url":"https://t.me/rstorx/1"}]]}'
     curl -s --max-time $TIMES -d "chat_id=$CHATID&disable_web_page_preview=1&text=$TEXT&parse_mode=html" $URL >/dev/null
     cp /etc/openvpn/*.ovpn /var/www/html/
