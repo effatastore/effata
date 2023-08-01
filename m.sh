@@ -2,7 +2,7 @@
 cek_reg_mode() {
     until [[ $MYIP =~ ^[0-9.]+$ && ${CLIENT_EXISTS} == '1' ]]; do
 
-        CLIENT_EXISTS=$(wget -qO- https://raw.githubusercontent.com/effatastore/ijinsceffata/ip | grep -w $MYIP | wc -l)
+        CLIENT_EXISTS=$(wget -qO- https://raw.githubusercontent.com/effatastore/ijin/ip | grep -w $MYIP | wc -l)
         if [[ ${CLIENT_EXISTS} == '0' ]]; then
             clear
             echo -e "\033[1;93m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
@@ -644,8 +644,8 @@ function install_all() {
 }
 
 function finish(){
-    USRSC=$(curl -sS https://raw.githubusercontent.com/effatastore/ijinsceffata/ipsc/ip | grep $MYIP | awk '{print $2}')
-    EXPSC=$(curl -sS https://raw.githubusercontent.com/effatastore/ijinsceffata/ipsc/ip | grep $MYIP | awk '{print $3}')
+    USRSC=$(curl -sS https://raw.githubusercontent.com/effatastore/ijin/ipsc/ip | grep $MYIP | awk '{print $2}')
+    EXPSC=$(curl -sS https://raw.githubusercontent.com/effatastore/ijin/ipsc/ip | grep $MYIP | awk '{print $3}')
     TIMEZONE=$(printf '%(%H:%M:%S)T')
     TEXT="
 <code>────────────────────</code>
